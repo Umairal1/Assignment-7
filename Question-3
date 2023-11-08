@@ -1,0 +1,22 @@
+import re
+
+# Initialize a list to store the sender email addresses
+senders = []
+
+# Open the mbox file
+with open("mbox.txt", "r") as file:
+    for line in file:
+        # Check if the line starts with "From " (with a space after "From")
+        if line.startswith("From "):
+            # Use regular expressions to extract the email address
+            match = re.search(r'\S+@\S+', line)
+            if match:
+                sender = match.group()
+                senders.append(sender)
+
+# Print the sender email addresses
+for sender in senders:
+    print(sender)
+
+# Print the number of senders found
+print("Number of senders:", len(senders))
