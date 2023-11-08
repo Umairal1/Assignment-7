@@ -1,0 +1,22 @@
+# Initialize an empty list to store unique words
+unique_words = []
+
+# Open the "romeo.txt" file
+with open("romeo.txt", "r") as file:
+    # Read the file line by line
+    for line in file:
+        # Split the line into words
+        words = line.split()
+        
+        # Iterate through the words in the line
+        for word in words:
+            # Check if the word is not already in the unique_words list
+            if word not in unique_words:
+                unique_words.append(word)
+
+# Sort the list of unique words
+unique_words.sort()
+
+# Print the sorted list of unique words
+for word in unique_words:
+    print(word)
