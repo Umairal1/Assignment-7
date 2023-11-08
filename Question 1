@@ -1,0 +1,23 @@
+def chop(input_list):
+    if len(input_list) >= 2:
+        del input_list[0]  # Remove the first element
+        del input_list[-1]  # Remove the last element
+    else:
+        input_list.clear()  # If the list has 0 or 1 element, clear the list
+    return None
+
+def middle(input_list):
+    if len(input_list) >= 2:
+        return input_list[1:-1]  # Return a new list containing all elements except the first and last elements
+    else:
+        return []
+
+# Sample usage of the functions
+my_list = [1, 2, 3, 4, 5]
+print("Original List:", my_list)
+
+chop(my_list)
+print("After chop:", my_list)
+
+new_list = middle(my_list)
+print("Middle List:", new_list)
